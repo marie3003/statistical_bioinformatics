@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise 1 Statistical Bioinformatics</title>
+<title>Statistical Bioinformatics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exercise 1 Statistical Bioinformatics</h1>
+<h1 class="title">Statistical Bioinformatics</h1>
 </div>
 
 
@@ -136,11 +136,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="histogram-with-log-scale" class="level1">
-<h1>Histogram with log scale</h1>
-<section id="since-the-data-is-sampled-from-a-log-normal-distribution-it-makes-sense-to-plot-a-logarithmic-x-axis-in-the-histogram.-now-expectation-value-and-standard-deviation-are-visible." class="level2">
-<h2 class="anchored" data-anchor-id="since-the-data-is-sampled-from-a-log-normal-distribution-it-makes-sense-to-plot-a-logarithmic-x-axis-in-the-histogram.-now-expectation-value-and-standard-deviation-are-visible.">Since the data is sampled from a log-normal distribution, it makes sense to plot a logarithmic x-axis in the histogram. Now expectation value and standard deviation are visible.</h2>
+<section id="histogram-with-log-scale" class="level2">
+<h2 class="anchored" data-anchor-id="histogram-with-log-scale">Histogram with log scale</h2>
+<p>Since the data is sampled from a log-normal distribution, it makes sense to plot a logarithmic x-axis in the histogram. Now expectation value and standard deviation are visible.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>log_sample_values <span class="ot">&lt;-</span> <span class="fu">log</span>(sample_values)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data_log <span class="ot">=</span> <span class="fu">data.frame</span>(log_sample_values)</span>
@@ -159,9 +157,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="violin-plot" class="level1">
-<h1>Violin plot</h1>
+<section id="violin-plot" class="level2">
+<h2 class="anchored" data-anchor-id="violin-plot">Violin plot</h2>
 <p>The distribution of the data can also be shown with a violin plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>violin_pl <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="dv">1</span>), <span class="at">y =</span> sample_values)) <span class="sc">+</span></span>
@@ -177,6 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="ex1_stat_bio_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
 </section>
 
 </main>

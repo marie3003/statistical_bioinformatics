@@ -1,5 +1,5 @@
 ---
-title: "Exercise 1 Statistical Bioinformatics"
+title: "Statistical Bioinformatics"
 format: html
 editor: visual
 ---
@@ -43,9 +43,9 @@ hist_linear <- ggplot(data, aes(x=sample_values)) +
 print(hist_linear)
 ```
 
-# Histogram with log scale
+## Histogram with log scale
 
-## Since the data is sampled from a log-normal distribution, it makes sense to plot a logarithmic x-axis in the histogram. Now expectation value and standard deviation are visible.
+Since the data is sampled from a log-normal distribution, it makes sense to plot a logarithmic x-axis in the histogram. Now expectation value and standard deviation are visible.
 
 ```{r}
 log_sample_values <- log(sample_values)
@@ -62,7 +62,7 @@ hist_log <- ggplot(data_log, aes(x=log_sample_values)) +
 print(hist_log)
 ```
 
-# Violin plot
+## Violin plot
 
 The distribution of the data can also be shown with a violin plot.
 
