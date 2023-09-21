@@ -1,0 +1,79 @@
+---
+title: "Exercise 1 Statistical Bioinformatics"
+format: html
+editor: visual
+---
+
+# Exercise 1
+
+The goal of this exercise is to sample a log-normal distribution and to plot this distribution with histograms and a violin plot. An expected value of `mu = 5` and a standard deviation of `sigma = 0.5` are chosen.
+
+```{r}
+# imports
+library(ggplot2)
+```
+
+## Sample log-normal distribution
+
+```{r}
+# Sampling 100 values
+set.seed(12)
+
+mu = 5
+sigma = 0.5
+
+sample_values <- rlnorm(100, meanlog = mu, sdlog = sigma)
+head(sample_values)
+```
+
+## Histogram
+
+First a histogram with normal scales is plotted.
+
+```{r}
+data <- data.frame(sample_values)
+hist_linear <- ggplot(data, aes(x=sample_values)) + 
+  geom_histogram(binwidth=5, fill="lightblue", color="white", alpha=0.7) +
+  labs(title="Histogram of Sampled Values", 
+       x="Value", 
+       y="Frequency") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+print(hist_linear)
+```
+
+# Histogram with log scale
+
+## Since the data is sampled from a log-normal distribution, it makes sense to plot a logarithmic x-axis in the histogram. Now expectation value and standard deviation are visible.
+
+```{r}
+log_sample_values <- log(sample_values)
+data_log = data.frame(log_sample_values)
+
+hist_log <- ggplot(data_log, aes(x=log_sample_values)) + 
+  geom_histogram(binwidth=0.1, fill="blue", color="white", alpha=0.7) +
+  labs(title="Histogram of Sampled Values with Log-scaled X-axis", 
+       x="Value (Log scale)", 
+       y="Frequency") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+print(hist_log)
+```
+
+# Violin plot
+
+The distribution of the data can also be shown with a violin plot.
+
+```{r}
+violin_pl <- ggplot(data, aes(x = factor(1), y = sample_values)) +
+  geom_violin(fill = "darkblue", color = "white", alpha = 0.7) +
+  labs(title = "Violin Plot of Sampled Values", 
+       x = "Data", 
+       y = "Value") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+print(violin_pl)
+```
