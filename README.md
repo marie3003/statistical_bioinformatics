@@ -1,1 +1,1 @@
-# statistical_bioinformatics
+# Introduction to statistical bioinformatics
